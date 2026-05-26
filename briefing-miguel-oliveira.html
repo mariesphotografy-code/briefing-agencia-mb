@@ -92,6 +92,24 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15);}
 .success-icon{width:72px;height:72px;border-radius:50%;background:var(--preto);display:inline-flex;align-items:center;justify-content:center;margin-bottom:24px;box-shadow:0 8px 28px rgba(26,23,20,.2);border:2px solid var(--dourado);}
 .success h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;margin-bottom:10px;}
 .success p{color:var(--muted);font-size:15px;max-width:340px;margin:0 auto;line-height:1.6;}
+
+.nav-fixed {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #fff;
+  border-top: 1px solid var(--bege-mid);
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  z-index: 999;
+  box-shadow: 0 -4px 20px rgba(26,23,20,0.08);
+}
+.nav-fixed .btn-next {
+  flex:1; max-width:220px; margin-left:auto;
+}
+body { padding-bottom: 90px !important; }
 </style>
 </head>
 <body>
@@ -160,7 +178,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15);}
       <label class="lbl">Observações sobre gravação</label>
       <textarea id="obsGrav" placeholder="Horários, restrições, preferências de ambiente..."></textarea>
     </div>
-    <div class="nav">
+    <div class="nav-fixed">
       <div></div>
       <button class="btn btn-next" onclick="ir(2)">Próximo →</button>
     </div>
@@ -202,7 +220,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15);}
       <input type="url" id="playlist" placeholder="https://open.spotify.com/playlist/...">
     </div>
 
-    <div class="nav">
+    <div class="nav-fixed">
       <button class="btn btn-back" onclick="ir(1)">← Voltar</button>
       <button class="btn btn-next" onclick="ir(3)">Próximo →</button>
     </div>
@@ -249,7 +267,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15);}
       <label class="lbl">Observações finais</label>
       <textarea id="obsFinal" placeholder="Alguma informação extra para a equipe?"></textarea>
     </div>
-    <div class="nav">
+    <div class="nav-fixed">
       <button class="btn btn-back" onclick="ir(2)">← Voltar</button>
       <button class="btn btn-next" onclick="ir(4)">Próximo →</button>
     </div>
@@ -292,7 +310,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15);}
       <label class="lbl">Explique melhor seu tom de voz</label>
       <textarea id="tomDesc" placeholder="Como gosta de se comunicar? Use exemplos se quiser..."></textarea>
     </div>
-    <div class="nav">
+    <div class="nav-fixed">
       <button class="btn btn-back" onclick="ir(3)">← Voltar</button>
       <button class="btn btn-next" id="btnEnv" onclick="enviar()">Enviar briefing ✓</button>
     </div>
