@@ -347,7 +347,7 @@ function ir(n){
     const l=document.getElementById('l'+i);
     l.className='step-lbl'+(i===n?' active':i<n?' done':'');
   }
-  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('formCard').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function addLink(){
   const row=document.createElement('div');row.className='link-row';
@@ -388,7 +388,7 @@ async function enviar(){
   document.getElementById('formCard').style.display='none';
   document.getElementById('progArea').style.display='none';
   document.getElementById('ok').classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('formCard').scrollIntoView({behavior:'smooth',block:'start'});
 }
 </script>
 </body>
