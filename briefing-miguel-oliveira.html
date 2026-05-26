@@ -520,12 +520,35 @@ function coletar(){
 // SEND
 async function enviar(){
   const btn=document.getElementById('btnEnv');
-  btn.disabled=true;btn.textContent='Enviando...';
+  btn.disabled=true;
+  btn.textContent='Enviando...';
+
+  // Mostra mensagem de aguarde
+  const aviso = document.createElement('p');
+  aviso.id = 'avisoEnvio';
+  aviso.style.cssText = 'text-align:center;font-size:13px;color:#7A6F65;margin-top:14px;line-height:1.6;';
+  aviso.innerHTML = '⏳ Aguarde, pode levar até <strong>60 segundos</strong>.<br>Não feche nem atualize a página.';
+  btn.parentNode.appendChild(aviso);
+
   const fd=new FormData();
   fd.append('dados',JSON.stringify(coletar()));
+
+  // Timeout de 90 segundos para dar tempo do servidor acordar
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 90000);
+
   try{
-    await fetch('https://briefing-agencia-mb.onrender.com/webhook',{method:'POST',body:fd});
-  }catch(e){console.warn(e);}
+    await fetch('https://briefing-agencia-mb.onrender.com/webhook',{
+      method:'POST',
+      body:fd,
+      signal:controller.signal
+    });
+  }catch(e){
+    console.warn('Aviso de conexão:', e);
+  }finally{
+    clearTimeout(timeout);
+  }
+
   document.getElementById('formCard').style.display='none';
   document.getElementById('progArea').style.display='none';
   document.getElementById('ok').classList.add('active');
