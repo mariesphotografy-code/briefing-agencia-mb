@@ -116,138 +116,6 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
   <div class="page active" id="p1">
     <div class="page-title">Identificação</div>
     <div class="page-sub">Vamos começar com o básico.</div>
-
-    <div class="field">
-      <label class="lbl">Nome do cliente</label>
-      <input type="text" id="nomeCliente" placeholder="Ex.: Barbearia do João">
-    </div>
-    <div class="field">
-      <label class="lbl">Quantos atendimentos foram realizados esse mês?</label>
-      <p class="hint">Uma estimativa já ajuda.</p>
-      <input type="number" id="atendimentos" placeholder="Ex.: 80" min="0">
-    </div>
-    <div class="field">
-      <label class="lbl">Tem alguma data importante nesse ou no próximo mês?</label>
-      <input type="text" id="datas" placeholder="Ex.: Feriado, evento no bairro, aniversário da barbearia...">
-    </div>
-    <div class="field">
-      <label class="lbl">Observações gerais</label>
-      <textarea id="obsGeral" placeholder="Algo que aconteceu esse mês que a equipe precisa saber..."></textarea>
-    </div>
-
-    <div class="nav-fixed" id="nav1">
-      <div></div>
-      <button class="btn btn-next" onclick="ir(2)">Próximo →</button>
-    </div>
-  </div>
-
-  <!-- PAGE 2 — Resultados -->
-  <div class="page" id="p2">
-    <div class="page-title">Resultados do Mês</div>
-    <div class="page-sub">Como foi o movimento e o que os clientes estão dizendo.</div>
-
-    <div class="sec-label">Clientes & Movimento</div>
-
-    <div class="field">
-      <label class="lbl">Como a maioria dos clientes está chegando até a barbearia?</label>
-      <p class="hint">Indicação de amigos? Passaram na frente e entraram? Já eram conhecidos?</p>
-      <textarea id="canais" placeholder="Ex.: Maioria por indicação, alguns pelo Google Maps, alguns já eram conhecidos do bairro..."></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">O que os clientes mais elogiam?</label>
-      <textarea id="elogios" placeholder="Ex.: O corte em si, o atendimento, o ambiente, a rapidez..."></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">Teve alguma reclamação ou ponto de melhoria percebido?</label>
-      <textarea id="melhorias" placeholder="Ex.: Espera muito longa, falta de agendamento online..."></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">Destaque do mês</label>
-      <textarea id="destaque" placeholder="O que de mais relevante aconteceu na barbearia esse mês?"></textarea>
-    </div>
-
-    <div class="divider"></div>
-    <div class="sec-label">Serviços</div>
-
-    <div class="field">
-      <label class="lbl">Quais serviços você oferece e quanto custa cada um?</label>
-      <textarea id="servicos" style="min-height:110px" placeholder="Ex.&#10;Corte masculino — R$ 35&#10;Barba — R$ 25&#10;Corte + barba — R$ 55&#10;Sobrancelha — R$ 15"></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">Qual serviço é o mais pedido?</label>
-      <input type="text" id="servicoTop" placeholder="Ex.: Corte + barba juntos">
-    </div>
-    <div class="field">
-      <label class="lbl">Tem algum serviço que quer divulgar mais?</label>
-      <input type="text" id="servicoDivulgar" placeholder="Ex.: Tratamento de barba, hidratação...">
-    </div>
-
-    <div class="nav-fixed" id="nav2">
-      <button class="btn btn-back" onclick="ir(1)">← Voltar</button>
-      <button class="btn btn-next" onclick="ir(3)">Próximo →</button>
-    </div>
-  </div>
-
-  <!-- PAGE 3 — Conteúdo -->
-  <div class="page" id="p3">
-    <div class="page-title">Histórias & Conteúdo</div>
-    <div class="page-sub">O que vai alimentar a criação do mês.</div>
-
-    <div class="field">
-      <label class="lbl">Alguma história ou momento marcante esse mês?</label>
-      <p class="hint">Um cliente especial, uma situação engraçada, uma transformação que chamou atenção...</p>
-      <textarea id="historias" style="min-height:110px" placeholder="Conte com detalhes — essas histórias viram conteúdo poderoso."></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">Teve alguma transformação de cliente que valha destacar?</label>
-      <textarea id="transformacoes" placeholder="Antes e depois, mudança de visual, cliente que voltou depois de um tempo..."></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">Novidades ou mudanças na barbearia</label>
-      <textarea id="novidades" placeholder="Novo serviço, novo produto, reforma, novo horário, nova parceria..."></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">Temas que gostaria de abordar no conteúdo</label>
-      <textarea id="temas" placeholder="Ex.: Cuidados com a barba em casa, tendências de corte, história da barbearia..."></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">Link de playlist (Spotify ou outra)</label>
-      <input type="url" id="playlist" placeholder="https://open.spotify.com/playlist/...">
-    </div>
-    <div class="field">
-      <label class="lbl">Observações finais para a equipe</label>
-      <textarea id="obsFinal" placeholder="Alguma informação extra que a equipe precisa saber?"></textarea>
-    </div>
-
-    <div class="nav-fixed" id="nav3">
-      <button class="btn btn-back" onclick="ir(2)">← Voltar</button>
-      <button class="btn btn-next" onclick="ir(4)">Próximo →</button>
-    </div>
-  </div>
-
-  <!-- PAGE 4 — Negócio -->
-  <div class="page" id="p4">
-    <div class="page-title">Negócio & Posicionamento</div>
-    <div class="page-sub">Entendendo a essência da barbearia.</div>
-
-    <div class="field">
-      <label class="lbl">Como surgiu a barbearia? Conte a história.</label>
-      <textarea id="historia" style="min-height:120px" placeholder="Por que abriu? Qual foi o caminho até aqui?"></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">Descreva o perfil dos clientes da barbearia</label>
-      <p class="hint">Faixa etária, estilo de vida, o que buscam, o que valorizam...</p>
-      <textarea id="publico" placeholder="Ex.: Homens entre 20 e 40 anos, bairro X, valorizam qualidade e ambiente descontraído..."></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">O que diferencia essa barbearia das outras da região?</label>
-      <textarea id="diferencial" placeholder="O atendimento? O estilo? O ambiente? A técnica?"></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">No que você não acredita no mercado de barbearias, mas a maioria faz?</label>
-      <textarea id="naoAcredita" placeholder="Seu ponto de vista único sobre o segmento."></textarea>
-    </div>
-
     <div class="divider"></div>
     <div class="sec-label">Tom de Voz</div>
 
@@ -345,4 +213,32 @@ async function enviar(){
 }
 </script>
 </body>
-</html>
+</html<!-- PAGE 3 — Conteúdo -->
+  <div class="page" id="p3">
+    <div class="page-title">Conteúdo do Mês</div>
+    <div class="page-sub">O que vai alimentar a criação.</div>
+
+    <div class="field">
+      <label class="lbl">Novidades ou mudanças na barbearia</label>
+      <textarea id="novidades" placeholder="Novo serviço, novo produto, reforma, novo horário, nova parceria..."></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">Temas que gostaria de abordar no conteúdo</label>
+      <textarea id="temas" placeholder="Ex.: Cuidados com a barba em casa, tendências de corte, história da barbearia..."></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">Link de playlist (Spotify ou outra)</label>
+      <input type="url" id="playlist" placeholder="https://open.spotify.com/playlist/...">
+    </div>
+    <div class="field">
+      <label class="lbl">Observações finais</label>
+      <textarea id="obsFinal" placeholder="Alguma informação extra que queira registrar?"></textarea>
+    </div>
+
+    <div class="nav-fixed" id="nav3">
+      <button class="btn btn-back" onclick="ir(2)">← Voltar</button>
+      <button class="btn btn-next" onclick="ir(4)">Próximo →</button>
+    </div>
+  </div>
+
+  >
