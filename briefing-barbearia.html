@@ -14,72 +14,56 @@
   --shadow:0 2px 24px rgba(26,23,20,0.09);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter',sans-serif;background:var(--bege);color:var(--preto);min-height:100vh;padding:0 0 90px;display:flex;flex-direction:column;align-items:center;}
+body{font-family:'Inter',sans-serif;background:var(--bege);color:var(--preto);min-height:100vh;padding:0 0 60px;display:flex;flex-direction:column;align-items:center;}
 .wrapper{width:100%;max-width:680px;padding:0 16px;}
-.hero{width:100%;background:var(--preto);padding:52px 32px 48px;text-align:center;}
-.hero-logo{width:80px;height:80px;border-radius:12px;object-fit:contain;margin-bottom:18px;}
-.hero-agency{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--dourado);margin-bottom:6px;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,6vw,48px);font-weight:600;color:#fff;line-height:1.05;margin-bottom:8px;}
-.hero-sub{font-size:13px;color:rgba(255,255,255,.45);font-weight:300;letter-spacing:.04em;}
-.intro-card{background:var(--preto-soft);padding:40px 36px;margin-bottom:28px;border-bottom:3px solid var(--dourado);}
-@media(max-width:500px){.intro-card{padding:28px 20px;}}
-.intro-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);margin-bottom:16px;}
-.intro-card h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,4vw,30px);font-weight:600;color:#fff;line-height:1.2;margin-bottom:20px;font-style:italic;}
-.intro-card p{font-size:14px;line-height:1.75;color:rgba(255,255,255,.62);font-weight:300;margin-bottom:14px;}
+.hero{width:100%;background:var(--preto);padding:48px 32px 44px;text-align:center;}
+.hero-logo{width:76px;height:76px;border-radius:12px;object-fit:contain;margin-bottom:16px;}
+.hero-agency{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--dourado);margin-bottom:6px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,42px);font-weight:600;color:#fff;margin-bottom:8px;}
+.hero-sub{font-size:13px;color:rgba(255,255,255,.4);font-weight:300;}
+.intro-card{background:var(--preto-soft);padding:36px 32px;margin-bottom:24px;border-bottom:3px solid var(--dourado);}
+@media(max-width:500px){.hero{padding:36px 20px 32px;}.intro-card{padding:24px 20px;}}
+.intro-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);margin-bottom:14px;}
+.intro-card h2{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,4vw,26px);font-weight:600;color:#fff;line-height:1.25;margin-bottom:16px;font-style:italic;}
+.intro-card p{font-size:14px;line-height:1.75;color:rgba(255,255,255,.6);font-weight:300;margin-bottom:12px;}
 .intro-card p strong{color:rgba(255,255,255,.9);font-weight:600;}
 .intro-card p:last-child{margin-bottom:0;}
-.progress-area{padding:24px 0 0;margin-bottom:20px;}
-.step-labels{display:flex;justify-content:space-between;margin-bottom:10px;}
-.step-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--bege-dark);flex:1;text-align:center;transition:color .3s;}
-.step-lbl.active{color:var(--dourado);}.step-lbl.done{color:var(--preto-soft);opacity:.7;}
+.progress-area{padding:20px 0 0;margin-bottom:18px;}
+.step-labels{display:flex;justify-content:space-between;margin-bottom:8px;}
+.step-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--bege-dark);flex:1;text-align:center;transition:color .3s;}
+.step-lbl.active{color:var(--dourado);}.step-lbl.done{color:var(--muted);}
 .bar-track{height:3px;background:var(--bege-dark);border-radius:99px;overflow:hidden;}
-.bar-fill{height:100%;background:linear-gradient(90deg,var(--dourado-light),var(--dourado));border-radius:99px;transition:width .45s cubic-bezier(.4,0,.2,1);}
-.card{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);border:1px solid var(--bege-mid);padding:36px 32px;animation:up .3s ease both;}
-@media(max-width:500px){.card{padding:24px 18px;}}
-@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--dourado-light),var(--dourado));border-radius:99px;transition:width .4s ease;}
+.card{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);border:1px solid var(--bege-mid);padding:32px 28px;animation:up .3s ease both;}
+@media(max-width:500px){.card{padding:22px 16px;}}
+@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .page{display:none;}.page.active{display:block;}
-.page-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--preto);margin-bottom:4px;}
-.page-sub{font-size:13px;color:var(--muted);margin-bottom:28px;font-weight:300;}
-.divider{height:1px;background:var(--bege-mid);margin:22px 0;}
-.sec-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--dourado);margin-bottom:14px;}
-.field{margin-bottom:20px;}
-.field label.lbl{display:block;font-size:13px;font-weight:600;color:var(--preto);margin-bottom:6px;}
-.hint{font-size:12px;color:var(--muted);margin-top:4px;}
-input[type=text],input[type=number],input[type=url],select,textarea{width:100%;padding:11px 14px;border:1.5px solid var(--bege-mid);border-radius:var(--radius);font-family:'Inter',sans-serif;font-size:14px;color:var(--preto);background:var(--bege);outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;}
-input:focus,select:focus,textarea:focus{border-color:var(--dourado);box-shadow:0 0 0 3px rgba(196,151,58,.13);background:#fff;}
-textarea{resize:vertical;min-height:88px;line-height:1.55;}
-.radio-group{display:flex;flex-wrap:wrap;gap:9px;}
-.radio-group input[type=radio]{display:none;}
-.radio-group label{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:9px;cursor:pointer;border:1.5px solid var(--bege-mid);background:var(--bege);font-size:13px;color:var(--muted);font-weight:500;transition:all .2s;user-select:none;}
-.radio-group label:hover{border-color:var(--dourado);color:var(--preto);}
-.radio-group input[type=radio]:checked + label{border-color:var(--dourado);background:var(--dourado-pale);color:var(--preto);font-weight:600;}
-.radio-dot{width:14px;height:14px;border-radius:50%;border:1.5px solid currentColor;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;}
-.radio-group input[type=radio]:checked + label .radio-dot::after{content:'';width:7px;height:7px;background:var(--dourado);border-radius:50%;}
-input[type=range]{width:100%;-webkit-appearance:none;height:4px;border-radius:99px;background:var(--bege-mid);outline:none;border:none;padding:0;box-shadow:none;}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--dourado);cursor:pointer;box-shadow:0 2px 8px rgba(196,151,58,.4);}
-.slider-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:5px;}
-.slider-val{text-align:center;font-size:32px;font-family:'Cormorant Garamond',serif;color:var(--dourado);margin-top:6px;}
-.link-list{display:flex;flex-direction:column;gap:8px;}
-.link-row{display:flex;gap:8px;}
-.link-row input{flex:1;}
-.btn-rm{width:38px;height:38px;border:1.5px solid var(--bege-mid);background:var(--bege);border-radius:9px;cursor:pointer;font-size:18px;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
-.btn-rm:hover{border-color:#c0392b;color:#c0392b;background:#fef0f0;}
-.btn-add{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--dourado);background:transparent;border:1.5px dashed var(--bege-dark);border-radius:9px;padding:9px 14px;cursor:pointer;margin-top:6px;transition:all .2s;}
-.btn-add:hover{background:var(--dourado-pale);border-color:var(--dourado);}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-@media(max-width:480px){.two{grid-template-columns:1fr;}}
-.nav-fixed{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--bege-mid);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;z-index:999;box-shadow:0 -4px 20px rgba(26,23,20,0.08);}
-.btn{padding:13px 26px;border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border:none;outline:none;transition:all .2s;}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--preto);margin-bottom:3px;}
+.page-sub{font-size:13px;color:var(--muted);margin-bottom:26px;font-weight:300;}
+.divider{height:1px;background:var(--bege-mid);margin:20px 0;}
+.sec-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--dourado);margin-bottom:12px;}
+.field{margin-bottom:18px;}
+.field label.lbl{display:block;font-size:13px;font-weight:600;color:var(--preto);margin-bottom:5px;}
+.hint{font-size:12px;color:var(--muted);margin-top:3px;}
+input[type=text],input[type=number],input[type=url],textarea{
+  width:100%;padding:11px 14px;border:1.5px solid var(--bege-mid);border-radius:var(--radius);
+  font-family:'Inter',sans-serif;font-size:14px;color:var(--preto);background:var(--bege);
+  outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;
+}
+input:focus,textarea:focus{border-color:var(--dourado);box-shadow:0 0 0 3px rgba(196,151,58,.12);background:#fff;}
+textarea{resize:vertical;min-height:86px;line-height:1.55;}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:12px;padding-top:20px;border-top:1px solid var(--bege-mid);}
+.btn{padding:13px 26px;border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border:none;outline:none;transition:all .2s;-webkit-appearance:none;}
 .btn-back{background:var(--bege);color:var(--muted);border:1.5px solid var(--bege-mid);}
 .btn-back:hover{border-color:var(--dourado);color:var(--preto);}
-.btn-next{background:var(--preto);color:#fff;flex:1;max-width:220px;margin-left:auto;box-shadow:0 4px 14px rgba(26,23,20,.2);}
+.btn-next{background:var(--preto);color:#fff;flex:1;max-width:200px;margin-left:auto;box-shadow:0 4px 14px rgba(26,23,20,.18);}
 .btn-next:hover{background:var(--preto-soft);transform:translateY(-1px);}
 .btn-next:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-.success{display:none;text-align:center;padding:52px 24px;animation:up .4s ease both;}
+.success{display:none;text-align:center;padding:48px 24px;animation:up .4s ease both;}
 .success.active{display:block;}
-.success-icon{width:72px;height:72px;border-radius:50%;background:var(--preto);display:inline-flex;align-items:center;justify-content:center;margin-bottom:24px;box-shadow:0 8px 28px rgba(26,23,20,.2);border:2px solid var(--dourado);}
-.success h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;margin-bottom:10px;}
-.success p{color:var(--muted);font-size:15px;max-width:340px;margin:0 auto;line-height:1.6;}
+.success-icon{width:68px;height:68px;border-radius:50%;background:var(--preto);display:inline-flex;align-items:center;justify-content:center;margin-bottom:22px;box-shadow:0 6px 24px rgba(26,23,20,.2);border:2px solid var(--dourado);}
+.success h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;margin-bottom:10px;}
+.success p{color:var(--muted);font-size:14px;max-width:320px;margin:0 auto;line-height:1.6;}
 </style>
 </head>
 <body>
@@ -94,7 +78,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 <div class="intro-card" style="width:100%">
   <div class="intro-label">Por que isso importa</div>
   <h2>O conteúdo que atrai clientes começa aqui.</h2>
-  <p>Tudo que você compartilha nesse briefing vira a base do que vamos criar juntos no próximo mês. <strong>Quanto mais você nos conta, mais o conteúdo vai falar com as pessoas certas.</strong></p>
+  <p>Tudo que você compartilha nesse briefing é o que vamos usar para criar o conteúdo do seu negócio. <strong>Quanto mais você nos conta, mais o conteúdo vai falar com as pessoas certas.</strong></p>
   <p>Responda com calma. Se não souber responder alguma coisa, é só colocar um ponto ( . ) para avançar.</p>
 </div>
 
@@ -102,8 +86,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 
 <div class="progress-area" id="progArea">
   <div class="step-labels">
-    <span class="step-lbl active" id="l1">Identificação</span>
-    <span class="step-lbl" id="l2">Resultados</span>
+    <span class="step-lbl active" id="l1">Básico</span>
+    <span class="step-lbl" id="l2">Clientes</span>
     <span class="step-lbl" id="l3">Conteúdo</span>
     <span class="step-lbl" id="l4">Negócio</span>
   </div>
@@ -112,26 +96,123 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 
 <div class="card" id="formCard">
 
-  <!-- PAGE 1 — Identificação -->
+  <!-- PAGE 1 — Básico -->
   <div class="page active" id="p1">
-    <div class="page-title">Identificação</div>
-    <div class="page-sub">Vamos começar com o básico.</div>
-    <div class="divider"></div>
-    <div class="sec-label">Tom de Voz</div>
+    <div class="page-title">Informações Básicas</div>
+    <div class="page-sub">Vamos começar pelo essencial do mês.</div>
 
     <div class="field">
-      <label class="lbl">De 0 a 10, qual é o tom de voz da barbearia?</label>
-      <p class="hint">0 = muito formal &nbsp;·&nbsp; 10 = muito descontraído e próximo</p>
-      <input type="range" id="tom" min="0" max="10" value="7" oninput="document.getElementById('tomVal').textContent=this.value">
-      <div class="slider-labels"><span>0 — Formal</span><span>10 — Descontraído</span></div>
-      <div class="slider-val" id="tomVal">7</div>
+      <label class="lbl">Nome da barbearia</label>
+      <input type="text" id="nomeCliente" placeholder="Ex.: Barbearia do João">
     </div>
     <div class="field">
-      <label class="lbl">Como a barbearia gosta de se comunicar com os clientes?</label>
-      <textarea id="tomDesc" placeholder="Ex.: Na zoeira mas com respeito, linguagem de bairro, direto ao ponto..."></textarea>
+      <label class="lbl">Quantos atendimentos foram feitos esse mês?</label>
+      <p class="hint">Uma estimativa já ajuda.</p>
+      <input type="number" id="atendimentos" placeholder="Ex.: 80" min="0">
+    </div>
+    <div class="field">
+      <label class="lbl">Como a maioria dos clientes chegou até a barbearia?</label>
+      <p class="hint">Indicação? Passaram na frente e entraram? Já eram conhecidos?</p>
+      <textarea id="canais" placeholder="Ex.: Maioria por indicação de amigos, alguns pelo Google Maps..."></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">Tem alguma data importante nesse ou no próximo mês?</label>
+      <input type="text" id="datas" placeholder="Ex.: Feriado, evento no bairro, aniversário da barbearia...">
     </div>
 
-    <div class="nav-fixed" id="nav4">
+    <div class="nav">
+      <div></div>
+      <button class="btn btn-next" onclick="ir(2)">Próximo →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 — Clientes & Serviços -->
+  <div class="page" id="p2">
+    <div class="page-title">Clientes & Serviços</div>
+    <div class="page-sub">Quem frequenta e o que a barbearia oferece.</div>
+
+    <div class="field">
+      <label class="lbl">Quais serviços você oferece e qual o valor de cada um?</label>
+      <textarea id="servicos" style="min-height:110px" placeholder="Ex.&#10;Corte masculino — R$ 35&#10;Barba — R$ 25&#10;Corte + barba — R$ 55&#10;Sobrancelha — R$ 15"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">Qual serviço é o mais pedido?</label>
+      <input type="text" id="servicoTop" placeholder="Ex.: Corte + barba juntos">
+    </div>
+    <div class="field">
+      <label class="lbl">Tem algum serviço que quer divulgar mais?</label>
+      <input type="text" id="servicoDivulgar" placeholder="Ex.: Tratamento de barba, hidratação...">
+    </div>
+    <div class="field">
+      <label class="lbl">O que os clientes mais elogiam?</label>
+      <textarea id="elogios" placeholder="O corte em si, o atendimento, o ambiente, a rapidez..."></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">Algum ponto de melhoria que você percebeu?</label>
+      <textarea id="melhorias" placeholder="Ex.: Fila de espera, agendamento, organização..."></textarea>
+    </div>
+
+    <div class="nav">
+      <button class="btn btn-back" onclick="ir(1)">← Voltar</button>
+      <button class="btn btn-next" onclick="ir(3)">Próximo →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 — Conteúdo -->
+  <div class="page" id="p3">
+    <div class="page-title">Conteúdo do Mês</div>
+    <div class="page-sub">O que vai alimentar a criação.</div>
+
+    <div class="field">
+      <label class="lbl">Novidades ou mudanças na barbearia</label>
+      <textarea id="novidades" placeholder="Novo serviço, produto novo, reforma, mudança de horário, parceria..."></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">Temas que gostaria de abordar</label>
+      <p class="hint">Assuntos relacionados ao negócio que fazem sentido mostrar.</p>
+      <textarea id="temas" placeholder="Ex.: Cuidados com a barba em casa, tendências de corte, bastidores do dia a dia..."></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">Link de playlist (Spotify ou outra)</label>
+      <p class="hint">Opcional — ajuda a entender o estilo e o ambiente da barbearia.</p>
+      <input type="url" id="playlist" placeholder="https://open.spotify.com/playlist/...">
+    </div>
+    <div class="field">
+      <label class="lbl">Observações finais</label>
+      <textarea id="obsFinal" placeholder="Alguma informação extra que queira registrar?"></textarea>
+    </div>
+
+    <div class="nav">
+      <button class="btn btn-back" onclick="ir(2)">← Voltar</button>
+      <button class="btn btn-next" onclick="ir(4)">Próximo →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 — Negócio -->
+  <div class="page" id="p4">
+    <div class="page-title">Sobre o Negócio</div>
+    <div class="page-sub">Para entender a essência da barbearia.</div>
+
+    <div class="field">
+      <label class="lbl">Como surgiu a barbearia? Conta a história.</label>
+      <p class="hint">Por que abriu? Qual foi o caminho até aqui?</p>
+      <textarea id="historia" style="min-height:120px" placeholder="Pode ser bem pessoal — isso ajuda muito na criação do conteúdo."></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">Descreva o perfil dos clientes da barbearia</label>
+      <p class="hint">Faixa etária, estilo, o que buscam, o que valorizam...</p>
+      <textarea id="publico" placeholder="Ex.: Homens entre 20 e 40 anos, do bairro mesmo, valorizam um bom atendimento e preço justo..."></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">O que diferencia essa barbearia das outras da região?</label>
+      <textarea id="diferencial" placeholder="O atendimento? O ambiente? A técnica? O preço? O relacionamento?"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">Qual é o sonho para a barbearia daqui pra frente?</label>
+      <textarea id="sonho" placeholder="Ex.: Ter dois barbeiros, abrir uma segunda unidade, ser referência no bairro..."></textarea>
+    </div>
+
+    <div class="nav">
       <button class="btn btn-back" onclick="ir(3)">← Voltar</button>
       <button class="btn btn-next" id="btnEnv" onclick="enviar()">Enviar briefing ✓</button>
     </div>
@@ -141,23 +222,17 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 
 <div class="card success" id="ok">
   <div class="success-icon">
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <path d="M7 16l6 6 12-12" stroke="#C4973A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+      <path d="M6 15l6 6 12-12" stroke="#C4973A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </div>
   <h2>Briefing enviado!</h2>
-  <p>Recebemos tudo certinho. A equipe já vai começar a trabalhar no seu conteúdo do mês. ✦</p>
+  <p>Recebemos tudo certinho. Já vamos começar a trabalhar no seu conteúdo do mês. ✦</p>
 </div>
 
 </div>
 
 <script>
-function updateNav(n){
-  for(let i=1;i<=4;i++){
-    const nav=document.getElementById('nav'+i);
-    if(nav) nav.style.display=i===n?'flex':'none';
-  }
-}
 let cur=1;
 function ir(n){
   document.getElementById('p'+cur).classList.remove('active');
@@ -168,29 +243,15 @@ function ir(n){
     const l=document.getElementById('l'+i);
     l.className='step-lbl'+(i===n?' active':i<n?' done':'');
   }
-  updateNav(n);
-  document.getElementById('formCard').scrollIntoView({behavior:'smooth',block:'start'});
-}
-updateNav(1);
-
-function addLink(){
-  const row=document.createElement('div');row.className='link-row';
-  row.innerHTML='<input type="url" placeholder="https://..."><button class="btn-rm" onclick="rmLink(this)">×</button>';
-  document.getElementById('links').appendChild(row);
-}
-function rmLink(btn){
-  const rows=document.querySelectorAll('.link-row');
-  if(rows.length>1)btn.closest('.link-row').remove();
-  else btn.closest('.link-row').querySelector('input').value='';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 function coletar(){
   const g=id=>{const el=document.getElementById(id);return el?el.value.trim():'';};
-  const oferta=document.querySelector('input[name="oferta"]:checked');
   return{
-    pagina1:{nomeCliente:g('nomeCliente'),atendimentos:g('atendimentos'),datasImportantes:g('datas'),obsGeral:g('obsGeral')},
-    pagina2:{canais:g('canais'),elogios:g('elogios'),melhorias:g('melhorias'),destaqueMes:g('destaque'),servicos:g('servicos'),servicoMaisPedido:g('servicoTop'),servicoDivulgar:g('servicoDivulgar')},
-    pagina3:{historiasMes:g('historias'),transformacoes:g('transformacoes'),novidades:g('novidades'),temas:g('temas'),playlist:g('playlist'),obsFinal:g('obsFinal')},
-    pagina4:{historia:g('historia'),publicoAlvo:g('publico'),diferencial:g('diferencial'),naoAcredita:g('naoAcredita'),tomVoz:g('tom'),tomVozDesc:g('tomDesc')}
+    pagina1:{nomeCliente:g('nomeCliente'),atendimentos:g('atendimentos'),canais:g('canais'),datasImportantes:g('datas')},
+    pagina2:{servicos:g('servicos'),servicoMaisPedido:g('servicoTop'),servicoDivulgar:g('servicoDivulgar'),elogios:g('elogios'),melhorias:g('melhorias')},
+    pagina3:{novidades:g('novidades'),temas:g('temas'),playlist:g('playlist'),obsFinal:g('obsFinal')},
+    pagina4:{historia:g('historia'),publicoAlvo:g('publico'),diferencial:g('diferencial'),sonho:g('sonho')}
   };
 }
 async function enviar(){
@@ -200,45 +261,19 @@ async function enviar(){
   aviso.style.cssText='text-align:center;font-size:13px;color:#7A6F65;margin-top:14px;line-height:1.6;';
   aviso.innerHTML='⏳ Aguarde, pode levar até <strong>60 segundos</strong>.<br>Não feche nem atualize a página.';
   btn.parentNode.appendChild(aviso);
-  const fd=new FormData();fd.append('dados',JSON.stringify(coletar()));
+  const fd=new FormData();
+  fd.append('dados',JSON.stringify(coletar()));
   const ctrl=new AbortController();
   const t=setTimeout(()=>ctrl.abort(),90000);
-  try{await fetch('https://briefing-agencia-mb.onrender.com/webhook',{method:'POST',body:fd,signal:ctrl.signal});}
-  catch(e){console.warn(e);}
+  try{
+    await fetch('https://briefing-agencia-mb.onrender.com/webhook',{method:'POST',body:fd,signal:ctrl.signal});
+  }catch(e){console.warn(e);}
   finally{clearTimeout(t);}
   document.getElementById('formCard').style.display='none';
   document.getElementById('progArea').style.display='none';
-  document.getElementById('nav4').style.display='none';
   document.getElementById('ok').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 </script>
 </body>
-</html<!-- PAGE 3 — Conteúdo -->
-  <div class="page" id="p3">
-    <div class="page-title">Conteúdo do Mês</div>
-    <div class="page-sub">O que vai alimentar a criação.</div>
-
-    <div class="field">
-      <label class="lbl">Novidades ou mudanças na barbearia</label>
-      <textarea id="novidades" placeholder="Novo serviço, novo produto, reforma, novo horário, nova parceria..."></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">Temas que gostaria de abordar no conteúdo</label>
-      <textarea id="temas" placeholder="Ex.: Cuidados com a barba em casa, tendências de corte, história da barbearia..."></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">Link de playlist (Spotify ou outra)</label>
-      <input type="url" id="playlist" placeholder="https://open.spotify.com/playlist/...">
-    </div>
-    <div class="field">
-      <label class="lbl">Observações finais</label>
-      <textarea id="obsFinal" placeholder="Alguma informação extra que queira registrar?"></textarea>
-    </div>
-
-    <div class="nav-fixed" id="nav3">
-      <button class="btn btn-back" onclick="ir(2)">← Voltar</button>
-      <button class="btn btn-next" onclick="ir(4)">Próximo →</button>
-    </div>
-  </div>
-
-  >
+</html>
