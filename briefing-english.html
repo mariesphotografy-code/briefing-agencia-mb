@@ -127,80 +127,11 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
   <div class="page active" id="p1">
     <div class="page-title">Profile & Recording</div>
     <div class="page-sub">Basic information and visual production planning.</div>
-    <div class="field">
-      <label class="lbl">Client name</label>
-      <input type="text" id="nomeCliente" placeholder="Ex.: Dr. Sarah Johnson">
-    </div>
-    <div class="divider"></div>
-    <div class="sec-label">Recording</div>
-    <div class="field">
-      <label class="lbl">Can you record next month?</label>
-      <div class="radio-group">
-        <input type="radio" name="gravar" id="gSim" value="Yes"><label for="gSim"><span class="radio-dot"></span>Yes</label>
-        <input type="radio" name="gravar" id="gNao" value="No"><label for="gNao"><span class="radio-dot"></span>No</label>
-        <input type="radio" name="gravar" id="gParc" value="Partially"><label for="gParc"><span class="radio-dot"></span>Partially</label>
-      </div>
     </div>
     <div class="field">
-      <label class="lbl">What materials can you send?</label>
-      <div class="check-group">
-        <input type="checkbox" id="mFoto" value="Photo"><label for="mFoto"><span class="check-box"></span>📷 Photo</label>
-        <input type="checkbox" id="mVideo" value="Recorded video"><label for="mVideo"><span class="check-box"></span>🎬 Recorded video</label>
-        <input type="checkbox" id="mBast" value="Behind the scenes"><label for="mBast"><span class="check-box"></span>🎥 Behind the scenes</label>
-        <input type="checkbox" id="mCarr" value="Carousel"><label for="mCarr"><span class="check-box"></span>🎠 Carousel</label>
-      </div>
-    </div>
-    <div class="field">
-      <label class="lbl">Preferred recording date</label>
-      <p class="hint" style="margin-bottom:12px">Select a date between the 5th and 15th</p>
-      <div class="date-grid date-group" id="dateGrid"></div>
-    </div>
-    <div class="field">
-      <label class="lbl">Notes about recording</label>
-      <textarea id="obsGrav" placeholder="Available times, restrictions, location preferences..."></textarea>
-    </div>
-    <div class="nav-fixed" id="nav1">
-      <div></div>
-      <button class="btn btn-next" onclick="ir(2)">Next →</button>
-    </div>
-  </div>
-
-  <!-- PAGE 2 -->
-  <div class="page" id="p2">
-    <div class="page-title">Results & Services</div>
-    <div class="page-sub">How your business performed this month.</div>
-    <div class="sec-label">Channels & Results</div>
-    <div class="field">
-      <label class="lbl">How did your clients find you this month?</label>
-      <p class="hint">Through referrals? Social media? Word of mouth? Paid ads?</p>
-      <textarea id="canais" placeholder="Ex.: Most came through Instagram DMs, a few were referrals from existing clients..."></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">Which channel brought the best results?</label>
-      <input type="text" id="melhorCanal" placeholder="Ex.: Instagram — most conversions came from Reels">
-    </div>
-    <div class="field">
-      <label class="lbl">What were the main hesitations before clients committed?</label>
-      <textarea id="objecoes" placeholder="Ex.: Price concerns, timing, wanted to think about it..."></textarea>
-    </div>
-    <div class="field">
-      <label class="lbl">Why did most people who didn't commit hold back?</label>
-      <textarea id="naoFecha" placeholder="What patterns did you notice in those who didn't move forward?"></textarea>
-    </div>
-    <div class="divider"></div>
-    <div class="sec-label">Your Offer</div>
-    <div class="field">
-      <label class="lbl">Do you offer services or physical products?</label>
-      <div class="radio-group">
-        <input type="radio" name="oferta" id="oServ" value="Services"><label for="oServ"><span class="radio-dot"></span>Services</label>
-        <input type="radio" name="oferta" id="oProd" value="Physical products"><label for="oProd"><span class="radio-dot"></span>Physical products</label>
-        <input type="radio" name="oferta" id="oAmbo" value="Both"><label for="oAmbo"><span class="radio-dot"></span>Both</label>
-      </div>
-    </div>
-    <div class="field">
-      <label class="lbl">Describe your services or product categories</label>
-      <p class="hint">Services: name, what's included, and price. Products: categories and price range.</p>
-      <textarea id="ofertaDesc" style="min-height:110px" placeholder="Ex.&#10;1:1 Coaching session — 60 min personalised session — £150&#10;Online programme — 8-week plan + support — £350"></textarea>
+      <label class="lbl">Describe your services</label>
+      <p class="hint">Name of each service, what's included and the price.</p>
+      <textarea id="ofertaDesc" style="min-height:110px" placeholder="Ex.&#10;Private yoga class — 60 min 1:1 session — £80&#10;Group class — weekly group session — £20&#10;Online programme — 4-week course — £150"></textarea>
     </div>
     <div class="field">
       <label class="lbl">Playlist link (Spotify or other)</label>
@@ -280,6 +211,16 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
     <div class="field">
       <label class="lbl">What sets you apart from your competitors?</label>
       <textarea id="diferencial" placeholder="What makes you the right choice?"></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">What do you often see in the yoga world online that you would <em>never</em> want on your profile?</label>
+      <p class="hint">Things that are common in your niche but don't feel right to you — aesthetics, messages, approaches, anything.</p>
+      <textarea id="naoQuer" placeholder="Ex.: Overly spiritual captions that feel disconnected, unrealistic body standards, toxic positivity..."></textarea>
+    </div>
+    <div class="field">
+      <label class="lbl">What do you often see in the yoga world online that you would <em>never</em> want on your profile?</label>
+      <p class="hint">Things that are common in your niche but don't feel right to you — aesthetics, messages, approaches, anything.</p>
+      <textarea id="naoQuer" placeholder="Ex.: Overly spiritual captions that feel disconnected, unrealistic body standards, toxic positivity..."></textarea>
     </div>
     <div class="field">
       <label class="lbl">Any important dates this month or next?</label>
@@ -371,7 +312,7 @@ function coletar(){
     pagina1:{nomeCliente:g('nomeCliente'),podeGravar:grav?grav.value:'',materiais:mat,dataGravacao:data?data.value:'',obsGravacao:g('obsGrav')},
     pagina2:{canais:g('canais'),melhorCanal:g('melhorCanal'),objecoes:g('objecoes'),naoFechamentos:g('naoFecha'),tipoOferta:oferta?oferta.value:'',descricaoOferta:g('ofertaDesc'),playlist:g('playlist')},
     pagina3:{historiasMes:g('historias'),resultadosClientes:g('resultados'),produtosDestaque:g('emDestaque'),novidades:g('novidades'),temas:g('temas'),links,obsFinal:g('obsFinal')},
-    pagina4:{historia:g('historia'),publicoAlvo:g('publico'),naoAcredita:g('naoAcredita'),diferencial:g('diferencial'),datasImportantes:g('datas'),tomVoz:g('tom'),tomVozDesc:g('tomDesc')}
+    pagina4:{historia:g('historia'),publicoAlvo:g('publico'),naoAcredita:g('naoAcredita'),diferencial:g('diferencial'),datasImportantes:g('datas'),naoQuerNoPerfil:g('naoQuer'),tomVoz:g('tom'),tomVozDesc:g('tomDesc')}
   };
 }
 async function enviar(){
