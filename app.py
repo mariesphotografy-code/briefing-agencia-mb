@@ -149,7 +149,7 @@ def blocos_mensal(d):
     p1=d.get("pagina1",{}); p2=d.get("pagina2",{})
     p3=d.get("pagina3",{}); p4=d.get("pagina4",{})
     bl = []
-    bl.append(h2("Identificacao"))
+    bl.append(h2("👤 Identificacao"))
     bl.append(li("Cliente", p1.get("nomeCliente") or p1.get("nome","")))
     bl.append(li("Pode gravar", p1.get("podeGravar","")))
     mat = p1.get("materiais",[])
@@ -202,51 +202,51 @@ def blocos_onboarding(d):
     pgs = {("pagina"+str(i)): d.get("pagina"+str(i),{}) for i in range(1,9)}
     p1=pgs["pagina1"]; p2=pgs["pagina2"]; p3=pgs["pagina3"]; p4=pgs["pagina4"]
     p5=pgs["pagina5"]; p6=pgs["pagina6"]; p7=pgs["pagina7"]; p8=pgs["pagina8"]
-    bl.append(h2("Identificacao"))
+    bl.append(h2("👤 Identificacao"))
     bl.append(li("Nome", p1.get("nome","")))
     bl.append(par(p1.get("proposta","")))
     bl.append(div())
-    bl.append(h2("Preferencias Pessoais"))
+    bl.append(h2("🎵 Preferencias Pessoais"))
     for k,label in [("playlist","Playlist"),("youtube","YouTube"),("familia","Familia"),
                     ("adjetivos","Adjetivos"),("pessoas","Pessoas importantes"),("medo","Maior medo")]:
         if p2.get(k): bl.append(li(label, p2.get(k,"")))
     if p2.get("fatos"): bl.append(h3("5 fatos")); bl.append(par(p2.get("fatos","")))
     bl.append(div())
-    bl.append(h2("Trabalho e Negocio"))
+    bl.append(h2("🏢 Trabalho e Negocio"))
     bl.append(par(p3.get("comeco","")))
     if p3.get("sonho"): bl.append(li("Sonho de infancia", p3.get("sonho","")))
     bl.append(par(p3.get("publico","")))
     if p3.get("naoAcredita"): bl.append(li("Nao acredita em", p3.get("naoAcredita","")))
     if p3.get("diferencial"):  bl.append(li("Diferencial", p3.get("diferencial","")))
     bl.append(div())
-    bl.append(h2("Conteudo e Redes Sociais"))
+    bl.append(h2("📱 Conteudo e Redes Sociais"))
     for k,label in [("assuntosSim","Quer falar sobre"),("assuntosNao","Jamais falaria"),
                     ("concorrentes","Concorrentes"),("perfisNicho","Perfis do nicho"),
                     ("perfisReels","Perfis de reels"),("deixaSeguir","O que faz parar de seguir")]:
         if p4.get(k): bl.append(li(label, p4.get(k,"")))
     if p4.get("perfisNao"): bl.append(par(p4.get("perfisNao","")))
     bl.append(div())
-    bl.append(h2("Perfil Proprio"))
+    bl.append(h2("📊 Perfil Proprio"))
     for k,label in [("funciona","O que funciona"),("naoDaCerto","O que nao da certo"),
                     ("ensaio","Ensaio fotografico"),("redesSociais","Outras redes")]:
         if p5.get(k): bl.append(li(label, p5.get(k,"")))
     if p5.get("favoritos"): bl.append(par(p5.get("favoritos","")))
     bl.append(div())
-    bl.append(h2("Historias, Objetivo e Servicos"))
+    bl.append(h2("🎯 Historias, Objetivo e Servicos"))
     if p6.get("historias"): bl.append(par(p6.get("historias","")))
     for k,label in [("desejoPerfil","Desejo com o perfil"),("expectativa","Expectativa"),
                     ("datasImportantes","Datas"),("provasSociais","Provas sociais")]:
         if p6.get(k): bl.append(li(label, p6.get(k,"")))
     if p6.get("servicos"): bl.append(par(p6.get("servicos","")))
     bl.append(div())
-    bl.append(h2("Identidade Visual"))
+    bl.append(h2("🎨 Identidade Visual"))
     for k,label in [("idVisual","Identidade atual"),("artesAtuais","Artes atuais"),
                     ("elementoIncluir","Quer incluir"),("elementosVisuais","Gosta evita"),
                     ("perfisArte","Perfis de arte"),("corEvitar","Cor a evitar")]:
         if p7.get(k): bl.append(li(label, p7.get(k,"")))
     if p7.get("universoMarca"): bl.append(par(p7.get("universoMarca","")))
     bl.append(div())
-    bl.append(h2("Tom de Voz"))
+    bl.append(h2("🗣️ Tom de Voz"))
     for k,label in [("cumprimentos","Cumprimentos"),("adjetivosPositivos","Adjetivos positivos"),
                     ("adjetivosNegativos","Adjetivos negativos"),("agressividade","Agressividade"),
                     ("formalidade","Formalidade"),("humor","Humor"),("emojis","Emojis")]:
@@ -258,20 +258,20 @@ def salvar_no_notion(titulo, dados_orig, dados_pt, diagnostico, tipo, idioma):
     dados_usar = dados_pt if dados_pt else dados_orig
     blocos = []
     if idioma == "en" and dados_pt:
-        blocos.append(h2("Original Responses (English)"))
+        blocos.append(h2("🇬🇧 Original Responses (English)"))
         for pg in ["pagina1","pagina2","pagina3","pagina4","pagina5","pagina6","pagina7","pagina8"]:
             sec = dados_orig.get(pg, {})
             for k, v in sec.items():
                 if v and str(v).strip() and k != "idioma":
                     blocos.append(li(k, str(v)))
         blocos.append(div())
-        blocos.append(h2("Traducao para o Portugues"))
+        blocos.append(h2("🇧🇷 Traducao para o Portugues"))
     if tipo == "onboarding":
         blocos += blocos_onboarding(dados_usar)
     else:
         blocos += blocos_mensal(dados_usar)
     if diagnostico:
-        label_diag = "Resumo Estrategico de Onboarding - IA" if tipo == "onboarding" else "Diagnostico Estrategico IA"
+        label_diag = "🤖 Resumo Estrategico de Onboarding - IA" if tipo == "onboarding" else "🤖 Diagnostico Estrategico IA"
         blocos.append(h2(label_diag))
         for linha in diagnostico.split("\n"):
             linha = linha.strip()
