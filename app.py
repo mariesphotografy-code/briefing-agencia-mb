@@ -33,7 +33,10 @@ def webhook():
         prefixo = "Onboarding" if tipo == "onboarding" else "Briefing"
         titulo = prefixo + " " + nome + " - " + hoje
         dados_pt = traduzir(dados) if idioma == "en" else None
-        diagnostico = gerar_diagnostico(dados_pt or dados, nome) if tipo == "mensal" else None
+        if tipo == "mensal":
+            diagnostico = gerar_diagnostico(dados_pt or dados, nome)
+        else:
+            diagnostico = gerar_resumo_onboarding(dados_pt or dados, nome)
         resultado = salvar_no_notion(titulo, dados, dados_pt, diagnostico, tipo, idioma)
         return jsonify({"status": "ok", "notion": resultado}), 200
     except Exception as e:
@@ -98,6 +101,39 @@ def gerar_diagnostico(dados, nome):
         "Diferencial: " + str(p4.get("diferencial",""))
     )
     return groq_call(prompt, max_tokens=1200)
+
+
+def gerar_resumo_onboarding(dados, nome):
+    p1=dados.get("pagina1",{}); p2=dados.get("pagina2",{})
+    p3=dados.get("pagina3",{}); p4=dados.get("pagina4",{})
+    p5=dados.get("pagina5",{}); p6=dados.get("pagina6",{})
+    p7=dados.get("pagina7",{}); p8=dados.get("pagina8",{})
+    prompt = (
+        "Voce e uma estrategista de conteudo digital especializada em personal branding.\n"
+        "Com base no onboarding do cliente abaixo, gere um resumo estrategico completo em portugues em 5 secoes:\n"
+        "## 1. Perfil e Essencia\n"
+        "## 2. Posicionamento e Diferenciais\n"
+        "## 3. Publico e Comunicacao\n"
+        "## 4. Identidade Visual e Tom de Voz\n"
+        "## 5. Recomendacoes Estrategicas\n\n"
+        "CLIENTE: " + nome + "\n"
+        "Proposta: " + str(p1.get("proposta","")) + "\n"
+        "Como comecou: " + str(p3.get("comeco","")) + "\n"
+        "Publico: " + str(p3.get("publico","")) + "\n"
+        "Diferencial: " + str(p3.get("diferencial","")) + "\n"
+        "Nao acredita em: " + str(p3.get("naoAcredita","")) + "\n"
+        "Quer falar sobre: " + str(p4.get("assuntosSim","")) + "\n"
+        "Jamais falaria: " + str(p4.get("assuntosNao","")) + "\n"
+        "O que funciona: " + str(p5.get("funciona","")) + "\n"
+        "Desejo com perfil: " + str(p6.get("desejoPerfil","")) + "\n"
+        "Servicos: " + str(p6.get("servicos","")) + "\n"
+        "Identidade visual: " + str(p7.get("elementosVisuais","")) + "\n"
+        "Universo da marca: " + str(p7.get("universoMarca","")) + "\n"
+        "Tom de voz - formalidade: " + str(p8.get("formalidade","5")) + "/10\n"
+        "Tom de voz - humor: " + str(p8.get("humor","5")) + "/10\n"
+        "Cumprimentos: " + str(p8.get("cumprimentos",""))
+    )
+    return groq_call(prompt, max_tokens=1500)
 
 def nb(tipo, content):
     return {"object":"block","type":tipo,tipo:{"rich_text":[{"type":"text","text":{"content":str(content)[:2000] if content else "-"}}]}}
@@ -235,7 +271,8 @@ def salvar_no_notion(titulo, dados_orig, dados_pt, diagnostico, tipo, idioma):
     else:
         blocos += blocos_mensal(dados_usar)
     if diagnostico:
-        blocos.append(h2("Diagnostico Estrategico IA"))
+        label_diag = "Resumo Estrategico de Onboarding - IA" if tipo == "onboarding" else "Diagnostico Estrategico IA"
+        blocos.append(h2(label_diag))
         for linha in diagnostico.split("\n"):
             linha = linha.strip()
             if not linha: continue
